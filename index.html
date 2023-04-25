@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content=": Interactive material-aware binaural sound propagation for reconstructed 3D scenes.">
+  <meta name="keywords" content="binaural acoustics, material-aware, sound propogation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listen2Scene: Interactive material-aware binaural sound propagation for reconstructed 3D scenes </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBHPZN38ZP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-FBHPZN38ZP');
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./data/css/bulma.min.css">
+  <link rel="stylesheet" href="./data/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./data/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./data/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./data/css/index.css">
+  <link rel="icon" href="./data/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./data/js/fontawesome.all.min.js"></script>
+  <!-- <script src="./data/js/bulma-carousel.min.js"></script> -->
+  <!-- <script src="./data/js/bulma-slider.min.js"></script> -->
+  <!-- <script src="./data/js/index.js"></script> -->
+
+  <style>
+    table {
+      border-collapse: separate;
+      text-indent: initial;
+    }
+    td {
+      display: table-cell;
+      vertical-align: inherit;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-widescreen">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Listen2Scene: Interactive material-aware binaural sound propagation for reconstructed 3D scenes</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://anton-jeran.github.io/antonjeran.github.io/">Anton Ratnarajah, </a></span>
+            <span class="author-block">
+              <a href="https://www.cs.umd.edu/people/dmanocha">Dinesh Manocha</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"> University of Maryland, College Park, USA</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2302.02809"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/anton-jeran/Listen2Scene"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-widescreen">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present an end-to-end binaural audio rendering approach (Listen2Scene) for virtual reality (VR) and augmented reality (AR) applications. We propose a novel neural-network-based binaural sound propagation method to generate acoustic effects for 3D models of real environments. Any clean audio or dry audio can be convolved with the generated acoustic effects to render audio corresponding to the real environment. We propose a graph neural network that uses both the material and the topology information of the 3D scenes and generates a scene latent vector. Moreover, we use a conditional generative adversarial network (CGAN) to generate acoustic effects from the scene latent vector. Our network is able to handle holes or other artifacts in the reconstructed 3D mesh model. We present an efficient cost function to the generator network to incorporate spatial audio effects. Given the source and the listener position, our learning-based binaural sound propagation approach can generate an acoustic effect in 0.1 milliseconds on an NVIDIA GeForce RTX 2080 Ti GPU and can easily handle multiple sources. We have evaluated the accuracy of our approach with binaural acoustic effects generated using an interactive geometric sound propagation algorithm and captured real acoustic effects. We also performed a perceptual evaluation and observed that the audio rendered by our approach is more plausible as compared to audio rendered using prior learning-based sound propagation algorithms.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+<section class="section">
+  <div class="container is-widescreen">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+    <h1 class="title is-1 publication-title">Supplementary Video</h1>
+    <div class="container is-widescreen">
+          <div align="center">
+            <iframe width="1100" height="600" src="https://www.youtube.com/embed/aNJWCwG-H_U" frameborder="0" allowfullscreen></iframe>
+            <p>
+                       </p>
+    </div>
+  </div> 
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<section class="section1">
+      <div class="container is-widescreen">
+        <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+
+         <h1 class="title is-1">Geometric sound propogation algorithm vs Listen2Scene</h1>
+       </div>
+     </div>
+         <h3 class="title is-4"> We compared sound-rendered 3D scenes with 2 sound sources. In this experiment,
+we evaluate whether our approach creates overall sound effects very similar to interactive geometric sound propogation algorithm. In practice, Listen2Scene is
+two orders of magnitude faster than the interactive geometric sound propagation algorithm.</h3>
+
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">Geometric sound propogation</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/tnPGnNT1t_c" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/FPecRXrh7OQ" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+         
+    </div>
+  </div> 
+      
+  </div>
+</section>
+<br>
+<br>
+<br>
+<section class="section1">
+      <div class="container is-widescreen">
+        <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+
+         <h1 class="title is-1">Clean (dry sound) vs Listen2Scene</h1>
+       </div>
+     </div>
+         <h3 class="title is-4"> We compared sound-rendered 3D scenes
+with a single sound source and 2 sound sources. In this experiment,
+we evaluate whether our approach creates continuous and smooth
+sound effects when moving around the scene and whether the user
+can perceive the indirect sound effects</h3>
+        <h2 class="title is-2">Single Source</h2>
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">Clean (Dry Sound)</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/-m2ykQvVUUQ" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/_rc7I9fPZtY" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+          <br>
+          <h2 class="title is-2">Two Sources</h2>
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">Clean (Dry Sound)</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/jjZNwR8xVMc" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/KZZX4yCkHjs" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+    </div>
+  </div> 
+      
+  </div>
+</section>
+
+
+<br>
+<br>
+<br>
+<section class="section2">
+      <div class="container is-widescreen">
+        <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+
+         <h1 class="title is-1"><a href="https://anton-jeran.github.io/M2IR/">MESH2IR (2022) </a> vs Listen2Scene</h1>
+       </div>
+     </div>
+         <h3 class="title is-4"> We generated auralized video each for
+a single source and 2 sources. Our goal is to investigate whether
+the participants feel that the sound effects in the left and right ears
+change smoothly and synchronously as the user walks in the scene.
+In addition to distance, we investigate whether our sound effects
+change smoothly with the direction of the source.
+</h3>
+        <h2 class="title is-2">Single Source</h2>
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">MESH2IR</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/CzyFRC8Cv04" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/i0-q3fr-Rvo" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+          <br>
+          <h2 class="title is-2">Two Sources</h2>
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">MESH2IR</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/cFuStlvaDWo" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/FPecRXrh7OQ" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+    </div>
+  </div> 
+      
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
+<section class="section3">
+      <div class="container is-widescreen">
+        <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+
+         <h1 class="title is-1">Listen2Scene-No-Mat vs Listen2Scene</h1>
+       </div>
+     </div>
+         <h3 class="title is-4"> We auralized two scenes
+with a single source from a medium-sized and a large scene, and
+another scene with two sources. In this experiment, we evaluate
+whether the reverberation effects from Listen2Scene match closely
+with the environment when compared with Listen2Scene-No-Mat.
+Our goal is to evaluate the perceptual benefits of adding material
+characteristics in our learning method.
+
+</h3>
+        <h2 class="title is-2">Single Source (Medium-Sized Scene)</h2>
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene-No-Mat</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/e9ZNT6l9wV4" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/H27242djGaM" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+          <br>
+          <h2 class="title is-2">Single Source (Large Scene)</h2>
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene-No-Mat</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/I5UaSKQlhZ0" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/_rc7I9fPZtY" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+          <br>
+          <h2 class="title is-2">Two Sources</h2>
+         <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene-No-Mat</h3></th>
+                            <th style="text-align:center;"><h3 class="title is-4">Listen2Scene</h3></th>
+                    
+                        </tr>
+                    </thead>
+
+                     <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <iframe width="600" height="320" src="https://www.youtube.com/embed/bCS25aKOo3c" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                               <iframe width="600" height="320" src="https://www.youtube.com/embed/FPecRXrh7OQ" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                            
+                        </tr>
+        
+                    </tbody>         
+                  </table>
+    </div>
+  </div> 
+      
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
